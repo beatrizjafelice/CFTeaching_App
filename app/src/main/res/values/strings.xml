@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CFTeaching</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="tab_text_alunos">Alunos</string>
+    <string name="tab_text_turmas">Turmas</string>
+    <string name="turmas">Turmas</string>
+    <string name="alunos">Alunos</string>
+</resources>
