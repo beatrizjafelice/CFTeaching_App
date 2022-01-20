@@ -7,4 +7,24 @@
     <string name="tab_text_turmas">Turmas</string>
     <string name="turmas">Turmas</string>
     <string name="alunos">Alunos</string>
+    <string name="anotacoes_botao">Anotações</string>
+    <string name="curso">Curso %s</string>
+    <string name="status">Aluno %s</string>
+    <string name="valor_hora">R$%s/hora</string>
+    <string name="tempo_aula">%s min/hora</string>
+    <string name="valor_mes">R$%s/mês</string>
+
+    <!-- String arrays -->
+    <string-array name="curso_menu">
+        <item>Presencial</item>
+        <item>Online</item>
+    </string-array>
+
+    <string-array name="duracao_menu">
+        <item>30 min</item>
+        <item>1h</item>
+        <item>1h 30 min</item>
+        <item>2h</item>
+    </string-array>
+
 </resources>

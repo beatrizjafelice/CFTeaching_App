@@ -16,13 +16,13 @@ class TurmaViewModel(private val turmaDao: TurmaDao): ViewModel() {
     //val allTurmas: LiveData<List<Turma>> = turmaDao.getTurmas().asLiveData()
 
     // Database-related functions:
-    private fun insertTurma(turma: Turma) {
+    fun insertTurma(turma: Turma) {
         viewModelScope.launch {
             turmaDao.insert(turma)
         }
     }
 
-    private fun updateTurma(turma: Turma) {
+    fun updateTurma(turma: Turma) {
         viewModelScope.launch {
             turmaDao.update(turma)
         }
@@ -34,8 +34,26 @@ class TurmaViewModel(private val turmaDao: TurmaDao): ViewModel() {
         }
     }
 
-    fun salvaNovaTurma(nomeTurma: String, alunosTurma: List<Aluno>) {
+    //fun buscaTurma(id: Int): LiveData<Turma> {
+        //return turmaDao.getTurmaById()
+    //}
 
+    fun salvaNovaTurma(nomeTurma: String, alunosTurma: List<Aluno>, valorMes: Double) {
+
+
+    }
+
+    fun turmaValida() {
+        return
+    }
+
+    fun alunoTemTurma(aluno: Aluno): Boolean {
+        return aluno.turma != null
+    }
+
+    fun addAluno(aluno: Aluno, turma: Turma) {
+        turma.alunosTurma.add(aluno)
+        aluno.turma = turma
     }
 
 }

@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
@@ -18,8 +20,8 @@ class MainFragment: Fragment() {
 
 
     val titles = arrayOf(
-        "Turmas",
-        "Alunos"
+        "Alunos",
+        "Turmas"
     )
 
     override fun onCreateView(
@@ -41,17 +43,31 @@ class MainFragment: Fragment() {
             tab.text = titles[position]
         }.attach()
 
+
         // Floating Action Button
         val fab: FloatingActionButton = binding.fab
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        val action = MainFragmentDirections.actionMainFragmentToAddAlunoFragment()
+        fab.setOnClickListener { _ ->
+            findNavController().navigate(action)
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun showDialog() {
+        val items = arrayOf("Aluno", "Turma")
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Adicionar novo")
+            .setItems(items) { _, id ->
+                addNew(id)
+            }
+    }
+
+    private fun addNew(id: Int) {
+        // TODO: implement
     }
 
 

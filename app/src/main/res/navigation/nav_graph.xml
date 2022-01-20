@@ -8,6 +8,27 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.jafan.cfteaching.ui.main.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_alunoDetailFragment"
+            app:destination="@id/alunoDetailFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addAlunoFragment"
+            app:destination="@id/addAlunoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alunoDetailFragment"
+        android:name="com.jafan.cfteaching.ui.main.AlunoDetailFragment"
+        android:label="Dados do aluno"
+        tools:layout="@layout/fragment_aluno_detail">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAlunoFragment"
+        android:name="com.jafan.cfteaching.ui.main.AddAlunoFragment"
+        android:label="Novo aluno"
+        tools:layout="@layout/fragment_add_aluno" />
 </navigation>

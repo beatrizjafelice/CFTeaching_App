@@ -12,8 +12,8 @@ class SectionsPagerAdapter(fragment: Fragment): FragmentStateAdapter(fragment) {
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> TurmasFragment()
-            else -> AlunosFragment()
+            0 -> AlunosFragment()
+            else -> TurmasFragment()
         }
     }
 

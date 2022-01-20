@@ -11,6 +11,8 @@
         android:id="@+id/turmas_recycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

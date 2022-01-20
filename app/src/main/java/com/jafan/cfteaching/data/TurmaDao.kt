@@ -10,7 +10,10 @@ interface TurmaDao {
     fun getTurmas(): Flow<List<Turma>>
 
     @Query("SELECT * FROM turmas WHERE id = :id")
-    fun getTurmaById(id: Int): Flow<Turma>*/
+    fun getTurmaById(id: Int): Flow<Turma>
+
+    @Query("SELECT alunos_turma FROM turmas WHERE id = :id")
+    fun getAlunosTurma(id: Int): Flow<List<Aluno>>*/
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(turma: Turma)
