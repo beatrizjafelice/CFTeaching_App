@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.jafan.cfteaching.data.Aluno
-import com.jafan.cfteaching.databinding.ListItemBinding
+import com.jafan.cfteaching.data.entities.Aluno
+import com.jafan.cfteaching.databinding.MainListItemBinding
 
 class AlunoAdapter (private val onItemCliked: (Aluno) -> Unit):
     ListAdapter<Aluno, AlunoAdapter.AlunoViewHolder>(DiffCallback) {
@@ -16,7 +16,7 @@ class AlunoAdapter (private val onItemCliked: (Aluno) -> Unit):
         viewType: Int
     ): AlunoAdapter.AlunoViewHolder {
         val viewHolder = AlunoViewHolder(
-            ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            MainListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
         viewHolder.itemView.setOnClickListener {
             val position = viewHolder.adapterPosition
@@ -29,7 +29,7 @@ class AlunoAdapter (private val onItemCliked: (Aluno) -> Unit):
         holder.bind(getItem(position))
     }
 
-    class AlunoViewHolder (private var binding: ListItemBinding): RecyclerView.ViewHolder(binding.root) {
+    class AlunoViewHolder (private var binding: MainListItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(aluno: Aluno) {
             binding.nomeTexto.text = aluno.nome
         }

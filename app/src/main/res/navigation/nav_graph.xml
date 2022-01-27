@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_mainFragment_to_addAlunoFragment"
             app:destination="@id/addAlunoFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_turmaDetailFragment"
+            app:destination="@id/turmaDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/alunoDetailFragment"
@@ -24,11 +27,20 @@
         tools:layout="@layout/fragment_aluno_detail">
         <argument
             android:name="id"
-            app:argType="integer" />
+            app:argType="long" />
     </fragment>
     <fragment
         android:id="@+id/addAlunoFragment"
         android:name="com.jafan.cfteaching.ui.main.AddAlunoFragment"
         android:label="Novo aluno"
         tools:layout="@layout/fragment_add_aluno" />
+    <fragment
+        android:id="@+id/turmaDetailFragment"
+        android:name="com.jafan.cfteaching.ui.main.TurmaDetailFragment"
+        android:label="Dados do grupo"
+        tools:layout="@layout/fragment_turma_detail">
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
 </navigation>

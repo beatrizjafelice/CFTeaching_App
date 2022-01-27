@@ -7,17 +7,55 @@
     <string name="tab_text_turmas">Turmas</string>
     <string name="turmas">Turmas</string>
     <string name="alunos">Alunos</string>
+    <string name="aulas">Aulas</string>
     <string name="anotacoes_botao">Anotações</string>
-    <string name="curso">Curso %s</string>
+    <string name="curso_aluno">Curso %s</string>
     <string name="status">Aluno %s</string>
     <string name="valor_hora">R$%s/hora</string>
-    <string name="tempo_aula">%s min/hora</string>
+    <string name="tempo_aula">%s min/aula</string>
     <string name="valor_mes">R$%s/mês</string>
+    <string name="dados_pessoais">Dados Pessoais</string>
+    <string name="nome">Nome</string>
+    <string name="telefone">Telefone</string>
+    <string name="curso">Curso</string>
+    <string name="aluno_ativo">Aluno ativo</string>
+    <string name="grupo">Grupo</string>
+    <string name="dados_das_aulas">Dados das Aulas</string>
+    <string name="valor_da_hora">Valor da hora</string>
+    <string name="duracao">Duração</string>
+    <string name="dias_da_semana">Dias da semana</string>
+    <string name="mes">Mês</string>
+    <string name="ano">Ano</string>
+    <string name="data">%s, %s/%s/%s</string>
+    <string name="horario">%s - %s</string>
+    <string name="adicionar_a_um_grupo">Adicionar a um grupo</string>
+
+    <!-- Selecionar dias da semana -->
+    <string name="dialog_dias_semana">Dias da semana</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="ok">OK</string>
+    <string name="salvar_aluno">Salvar aluno</string>
+    <string name="dados_do_grupo">Dados do grupo</string>
+    <string name="grupo_ativo">Grupo ativo</string>
+    <string name="adicionar_alunos">Adicionar alunos</string>
+    <string name="adicionar_ao_calendario">Adicionar ao calendário</string>
+    <string name="dados_da_aula">Dados da Aula</string>
+    <string name="data_da_aula">Data da aula</string>
+    <string name="inicio">Início</string>
+    <string name="fim">Fim</string>
+
 
     <!-- String arrays -->
+
+    <string-array name="tab_titles">
+        <item>Alunos</item>
+        <item>Turmas</item>
+    </string-array>
+
     <string-array name="curso_menu">
         <item>Presencial</item>
         <item>Online</item>
+        <item>Híbrido</item>
     </string-array>
 
     <string-array name="duracao_menu">
@@ -25,6 +63,25 @@
         <item>1h</item>
         <item>1h 30 min</item>
         <item>2h</item>
+    </string-array>
+
+    <string-array name="meses">
+        <item>Jan</item>
+        <item>Fev</item>
+        <item>Mar</item>
+        <item>Abr</item>
+        <item>Mai</item>
+        <item>Jun</item>
+        <item>Jul</item>
+        <item>Ago</item>
+        <item>Set</item>
+        <item>Out</item>
+        <item>Nov</item>
+        <item>Dez</item>
+    </string-array>
+
+    <string-array name="anos">
+
     </string-array>
 
 </resources>

@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.jafan.cfteaching.data.Turma
-import com.jafan.cfteaching.databinding.ListItemBinding
+import com.jafan.cfteaching.data.entities.Turma
+import com.jafan.cfteaching.databinding.MainListItemBinding
 
 class TurmasAdapter (private val onItemCliked: (Turma) -> Unit):
     ListAdapter<Turma, TurmasAdapter.TurmasViewHolder>(DiffCallback) {
@@ -17,7 +17,7 @@ class TurmasAdapter (private val onItemCliked: (Turma) -> Unit):
         viewType: Int
     ): TurmasAdapter.TurmasViewHolder {
         val viewHolder = TurmasViewHolder(
-            ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            MainListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
         viewHolder.itemView.setOnClickListener {
             val position = viewHolder.adapterPosition
@@ -30,7 +30,7 @@ class TurmasAdapter (private val onItemCliked: (Turma) -> Unit):
         holder.bind(getItem(position))
     }
 
-    class TurmasViewHolder (private var binding: ListItemBinding): RecyclerView.ViewHolder(binding.root) {
+    class TurmasViewHolder (private var binding: MainListItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(turma: Turma) {
             binding.nomeTexto.text = turma.nomeTurma
         }

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.main.AddAulaFragment">
+
+    <data>
+        <variable
+            name="addAulaFragment"
+            type="com.jafan.cfteaching.ui.main.AddAulaFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/titulo_dados_da_aula"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/dados_da_aula"
+                android:textSize="18sp"
+                android:textColor="@color/usa_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/ic_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/data_label"
+                app:layout_constraintTop_toTopOf="@id/data_label"
+                app:layout_constraintBottom_toBottomOf="@id/data_label"
+                app:srcCompat="@drawable/ic_baseline_calendar_today_24"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/data_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/data_da_aula"
+                app:layout_constraintStart_toEndOf="@id/ic_data"
+                app:layout_constraintTop_toBottomOf="@id/titulo_dados_da_aula"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ano_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    tools:text="16/08/2022"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <ImageView
+                android:id="@+id/ic_notas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                app:srcCompat="@drawable/ic_notes_24"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toStartOf="@id/notas_label"
+                app:layout_constraintTop_toBottomOf="@id/data_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/notas_label"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/notas_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/anotacoes_botao"
+                app:layout_constraintStart_toEndOf="@id/ic_notas"
+                app:layout_constraintTop_toBottomOf="@id/data_label"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/notas_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:singleLine="false"
+                    tools:text="Parou na página 23"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
+

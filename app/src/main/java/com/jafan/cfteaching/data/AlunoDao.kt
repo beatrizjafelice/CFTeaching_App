@@ -1,6 +1,7 @@
 package com.jafan.cfteaching.data
 
 import androidx.room.*
+import com.jafan.cfteaching.data.entities.Aluno
 import kotlinx.coroutines.flow.Flow
 
 @Dao

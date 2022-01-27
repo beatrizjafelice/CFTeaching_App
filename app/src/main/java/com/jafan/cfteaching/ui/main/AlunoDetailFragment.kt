@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.jafan.cfteaching.R
-import com.jafan.cfteaching.data.Aluno
+import com.jafan.cfteaching.data.entities.Aluno
 import com.jafan.cfteaching.data.lista_alunos
 import com.jafan.cfteaching.databinding.FragmentAlunoDetailBinding
 
@@ -39,16 +39,16 @@ class AlunoDetailFragment: Fragment() {
 
         binding.apply {
             nome.text = aluno.nome
-            curso.text = getString(R.string.curso, aluno.curso)
+            curso.text = getString(R.string.curso_aluno, aluno.curso)
             ativo.text = if (aluno.ativo) {
                 getString(R.string.status, "ativo")
             } else {
                 getString(R.string.status, "não ativo")
             }
             telefone.text = aluno.telefone
-            valor.text = getString(R.string.valor_hora, aluno.valorHora.toString())
+            /*valor.text = getString(R.string.valor_hora, aluno.valorHora.toString())
             duracao.text = getString(R.string.tempo_aula, aluno.tempoAula.toString())
-            precoMes.text = getString(R.string.valor_mes, aluno.valorMes.toString())
+            precoMes.text = getString(R.string.valor_mes, aluno.valorMes.toString())*/
         }
 
 

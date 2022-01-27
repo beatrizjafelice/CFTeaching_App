@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jafan.cfteaching.adapter.AlunoAdapter
 import com.jafan.cfteaching.data.lista_alunos
@@ -31,8 +31,7 @@ class AlunosFragment: Fragment() {
         val recyclerAlunos = binding.alunosRecycler
         recyclerAlunos.layoutManager = LinearLayoutManager(requireContext())
         val adapter = AlunoAdapter {
-            val action = MainFragmentDirections.actionMainFragmentToAlunoDetailFragment(id = it.id)
-            view.findNavController().navigate(action)
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToAlunoDetailFragment(id = it.id))
         }
         val data = lista_alunos
         recyclerAlunos.adapter = adapter

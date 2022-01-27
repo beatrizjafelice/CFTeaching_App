@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.jafan.cfteaching.R
 import com.jafan.cfteaching.adapter.SectionsPagerAdapter
 import com.jafan.cfteaching.adapter.TurmasAdapter
 import com.jafan.cfteaching.data.lista_turmas
@@ -31,7 +33,7 @@ class TurmasFragment: Fragment() {
         val recyclerTurmas = binding.turmasRecycler
         recyclerTurmas.layoutManager = LinearLayoutManager(requireContext())
         val adapter = TurmasAdapter {
-            // TODO: click event
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToTurmaDetailFragment(id = it.id))
         }
         recyclerTurmas.adapter = adapter
         val data = lista_turmas

@@ -1,6 +1,8 @@
 package com.jafan.cfteaching.data
 
 import androidx.room.*
+import com.jafan.cfteaching.data.entities.Turma
+import com.jafan.cfteaching.data.relations.TurmaComAlunos
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -23,4 +25,8 @@ interface TurmaDao {
 
     @Delete
     suspend fun delete(turma: Turma)
+
+    @Transaction
+    //@Query("SELECT * FROM turmas WHERE id = :turmaId")
+    suspend fun getTurmaComAlunos(turmaId: Long): Flow<List<TurmaComAlunos>>
 }

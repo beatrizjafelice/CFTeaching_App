@@ -4,57 +4,56 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.*
-import com.jafan.cfteaching.data.Aluno
-import com.jafan.cfteaching.data.Turma
 import com.jafan.cfteaching.data.TurmaDao
+import com.jafan.cfteaching.data.entities.Turma
 import kotlinx.coroutines.launch
-import java.lang.IllegalArgumentException
 
 class TurmaViewModel(private val turmaDao: TurmaDao): ViewModel() {
 
     //val allTurmas: LiveData<List<Turma>> = turmaDao.getTurmas().asLiveData()
 
     // Database-related functions:
-    fun insertTurma(turma: Turma) {
+    private fun insertTurma(turma: Turma) {
         viewModelScope.launch {
             turmaDao.insert(turma)
         }
     }
 
-    fun updateTurma(turma: Turma) {
+    private fun updateTurma(turma: Turma) {
         viewModelScope.launch {
             turmaDao.update(turma)
         }
     }
 
-    fun deleteTurma(turma: Turma) {
+    private fun deleteTurma(turma: Turma) {
         viewModelScope.launch {
             turmaDao.delete(turma)
         }
     }
 
-    //fun buscaTurma(id: Int): LiveData<Turma> {
-        //return turmaDao.getTurmaById()
+    //fun buscaTurmaPorId(id: Int): LiveData<Turma> {
+        //return turmaDao.getTurmaById(id)
     //}
 
-    fun salvaNovaTurma(nomeTurma: String, alunosTurma: List<Aluno>, valorMes: Double) {
-
+ /*   fun salvaNovaTurma(id: Long, nomeTurma: String) {
+        val novaTurma = Turma(id = id, nomeTurma = nomeTurma)
+        insertTurma(novaTurma)
 
     }
 
-    fun turmaValida() {
-        return
+    fun atualizaTurma(id: Long, nomeTurma: String) {
+        val turmaAtualizada = Turma(id = id, nomeTurma = nomeTurma)
+        updateTurma(turmaAtualizada)
+    }
+*/
+
+
+    fun turmaValida(nomeTurma: String): Boolean {
+        return nomeTurma.isNotBlank()
     }
 
-    fun alunoTemTurma(aluno: Aluno): Boolean {
-        return aluno.turma != null
-    }
 
-    fun addAluno(aluno: Aluno, turma: Turma) {
-        turma.alunosTurma.add(aluno)
-        aluno.turma = turma
-    }
+
 
 }
 
